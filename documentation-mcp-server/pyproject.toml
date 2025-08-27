@@ -1,0 +1,48 @@
+[project]
+name = "solargis.documentation-mcp-server"
+version = "0.1.0"
+description = "Model Context Protocol (MCP) server for Solargis documentation"
+readme = "README.md"
+keywords = ["mcp", "solargis", "documentation", "model-context-protocol"]
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4>=4.13.5",
+    "httpx>=0.28.1",
+    "loguru>=0.7.3",
+    "markdownify>=1.2.0",
+    "mcp[cli]>=1.13.1",
+    "pydantic>=2.11.7",
+]
+authors = [
+    {name = "Solargis"},
+]
+license = {text = "Apache-2.0"}
+license-files = ["LICENSE"]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.scripts]
+"solargis.documentation-mcp-server" = "solargis.documentation_mcp_server.server:main"
+
+[project.urls]
+Homepage = "https://solargis.github.io/mcp/"
+Documentation = "https://solargis.github.io/mcp/servers/documentation-mcp-server/"
+Source = "https://github.com/solargis/mcp.git"
+"Bug Tracker" = "https://github.com/solargis/mcp/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["solargis"]
